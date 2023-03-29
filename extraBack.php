@@ -115,16 +115,15 @@ if (isset($_SESSION['success'])) {
                 }
                 $sql .= "$index[$indexI] (`$name[$indexI]`)";
                 $sql .= ")";
-                echo "SQL : " . $sql;
                 $result = mysqli_query($conn, $sql);
                 if ($result) {
-                    echo "<br/> Table created successfully";
+                    echo "<p align='center' style='color:$00FF00; background-color: #00FF0020; padding:1rem; font-size:1.1rem;'>Table Created Successfully</p>";
                 } else {
                     echo "Table not created successfully" . mysqli_error($conn);
                 }
             }
         } else {
-            echo "ERROR: Fields are required";
+            echo "<p align='center' style='color:crimson; background-color: #FF000020; padding:1rem; font-size:1.1rem;'>ERROR: Fields are required</p>";
         }
     }
 }
